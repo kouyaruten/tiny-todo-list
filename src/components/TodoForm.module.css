@@ -1,0 +1,114 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form input {
+    outline: 0;
+    border: 0;
+    padding: 1rem 1.5rem;
+    font-size: 14px;
+    color: #909090;
+    border-radius: 5px;
+    letter-spacing: 0.00938em;
+    font-weight: 400;
+    width: 60%;
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    background-color: #efeeee;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+input:active,
+input:focus,
+input:hover {
+    background-color: #f5f5f5;
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #efeeee;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #909090;
+    font-weight: 700;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    -moz-transition: all 0.3 ease;
+    transition: all 0.3 ease !important;
+    cursor: pointer;
+    box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.5), 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.5), 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.5), 6px 6px 16px rgba(209, 205, 199, 0.5);
+}
+button:active {
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+}
+
+button.Archive {
+    padding: 10px 15px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: #f7f7f7;
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    -moz-transition: all 0.2s ease !important;
+    margin: 0 1rem
+}
+button.Archive:hover {
+    background-color: #efeeee;
+    
+}
+button.Archive:active {
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+}
+
+p.Title#title {
+    text-decoration-line: none !important;
+    color: #909090;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    -moz-transition: all 0.2s ease !important;
+}
+p.Title:hover {
+    background-color: #efeeee;
+}
+p.Title:active {
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+
+}
+a {
+    text-decoration: none;
+}
+
+a.activeLink button.Archive {
+    color: #606060 !important;
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+
+}
+
+a.activeLink p.Title {
+    color: #606060 !important;
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -webkit-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+    -moz-box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5);
+
+}
+
