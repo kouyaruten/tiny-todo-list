@@ -77,10 +77,13 @@ export const TrelloList = (props) => {
         e.target.select();
     };
 
+    const borderColor = listID==='2' ? 'rgb(0,92,175)' : listID === '1' ? 'rgb(181,73,91)' : listID === '0' ? 'rgb(51,166,184)' : 'rgb(100,106,88)';
+    
+
     const renderTitle = () => {
         const editable = listID !== '0' &&listID !== '1' && listID !== '2';
         return !editing ? (
-            <h3 style={{ marginLeft: '16px', color: '#303030', cursor: 'pointer',overflow:'hidden',cursor: editable ? 'pointer' : 'default',textOverflow:'ellipsis',whiteSpace:'nowrap'}} onClick={editable ? toggleEditing : undefined}>
+            <h3 style={{borderLeft:'10px solid',borderLeftColor: borderColor,  paddingLeft: '16px', color: '#37352f', cursor: 'pointer',overflow:'hidden',cursor: editable ? 'pointer' : 'default',textOverflow:'ellipsis',whiteSpace:'nowrap'}} onClick={editable ? toggleEditing : undefined}>
                 {text}
             </h3>
         ) : (
@@ -103,7 +106,7 @@ export const TrelloList = (props) => {
                         color: '#606060',
                         padding: '16px',
                         marginTop:'3px',
-                        marginBottom:'12px'
+                        marginBottom:'32px'
                     }}
                 />
             </form>

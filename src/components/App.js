@@ -13,7 +13,7 @@ import Archive from './Archive';
 const ListContainer = styled.div`
     display: flex;
     flex-direction: row;
-    background-color: #efeeee;
+    background-color: #eeeeef;
     height:90vh;    
 `;
 

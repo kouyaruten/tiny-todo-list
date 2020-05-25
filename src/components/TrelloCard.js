@@ -131,8 +131,8 @@ const TrelloCard = (props) => {
         onMouseOver={handleHover}
         onMouseOut={handleHoverLeave}
         style={{
-          boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
-          // boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
+          // boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
+          boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
           marginBottom: '20px',
         }}
       >
@@ -170,8 +170,8 @@ const TrelloCard = (props) => {
         onMouseOver={handleHover}
         onMouseOut={handleHoverLeave}
         style={{
-          boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
-          // boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
+          // boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
+          boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
           marginBottom: '20px',
         }}
       >
