@@ -20,10 +20,12 @@ const ListContainer = styled.div`
 `;
 
 const List = styled.div`
-  background-color: ${(props) => (props.isDraggingOver ? '#dfe3e6' : '#efeeee')};
+  background-color: ${(props) =>
+    props.isDarkMode ? (props.isDraggingOver ? '#8e8e93' : '#3a3a3c') : props.isDraggingOver ? '#dfe3e6' : '#efeeee'};
   padding: 16px;
   transition: all 0.1s;
-  box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.5), 6px 6px 16px rgba(209, 205, 199, 0.5);
+  box-shadow: ${(props) =>
+    props.isDarkMode ? 'none' : '-6px -6px 16px rgba(255, 255, 255, 0.5), 6px 6px 16px rgba(209, 205, 199, 0.5)'};
   border-radius: 5px;
   max-height: 70vh;
   overflow: auto;
@@ -47,13 +49,14 @@ class InnerList extends React.Component {
         isTiny={this.props.listID === '0'}
         isTask={this.props.listID === '1'}
         isGoal={this.props.listID === '2'}
+        isDarkMode={this.props.isDarkMode}
       />
     ));
   }
 }
 
 export const TrelloList = (props) => {
-  const { title, listID, index } = props;
+  const { title, listID, index, isDarkMode } = props;
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(title);
   const placeholder = `Add ${title}`;
@@ -94,7 +97,7 @@ export const TrelloList = (props) => {
           borderLeft: '10px solid',
           borderLeftColor: borderColor,
           paddingLeft: '16px',
-          color: '#37352f',
+          color: isDarkMode ? '#efeff4' : '#37352f',
           cursor: 'pointer',
           overflow: 'hidden',
           cursor: editable ? 'pointer' : 'default',
@@ -122,7 +125,6 @@ export const TrelloList = (props) => {
             border: 'none',
             fontSize: '1.1em',
             fontWeight: '700',
-            color: '#606060',
             padding: '16px',
             marginTop: '3px',
             marginBottom: '32px',
@@ -153,13 +155,18 @@ export const TrelloList = (props) => {
               marginBottom: '1rem',
             }}
           >
-            <TrelloForm listID={listID} />
+            <TrelloForm listID={listID} isDarkMode={isDarkMode} />
           </div>
           <div {...provided.dragHandleProps}>
             <Droppable droppableId={String(listID)}>
               {(provided, snapshot) => (
-                <List {...provided.droppableProps} ref={provided.innerRef} isDraggingOver={snapshot.isDraggingOver}>
-                  <InnerList cards={props.cards} listID={listID} />
+                <List
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  isDraggingOver={snapshot.isDraggingOver}
+                  isDarkMode={isDarkMode}
+                >
+                  <InnerList cards={props.cards} listID={listID} isDarkMode={isDarkMode} />
                   {provided.placeholder}
                   {/* <TrelloActionButton listID={listID} /> */}
                 </List>

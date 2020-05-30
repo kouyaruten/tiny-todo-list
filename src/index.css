@@ -1,21 +1,21 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #efeeee;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #3a3a3c;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .fade-exit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fade-exit.fade-exit-active {
-    opacity: 0;
-    transition: opacity 500ms ease-out;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
 }
 .fade-enter {
   opacity: 0;

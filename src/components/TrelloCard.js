@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import DoneOutlineOutlinedIcon from '@material-ui/icons/DoneOutlineOutlined';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { Draggable } from 'react-beautiful-dnd';
@@ -15,15 +16,17 @@ import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 const Container = styled.div`
-  background-color: ${(props) => (props.isDragging ? '#89b7b7' : '#fffefb')};
+  background-color: ${(props) => (props.isDarkMode ? '#5d5d63' : props.isDragging ? '#89b7b7' : '#fffefb')};
+  color: ${(props) => props.isDarkMode && '#efeff4'};
   margin-bottom: 8px;
   border-radius: 5px;
   box-shadow: ${(props) => (props.isDragging ? '0px 5px 5px rgba(0,0,0,0.3)' : 'none')};
   word-wrap: break-word;
+  transition: all 0.2s;
 `;
 
 const TrelloCard = (props) => {
-  const { text, id, index, completed, isTiny, isTask, isGoal } = props;
+  const { text, id, index, completed, isTiny, isTask, isGoal, isDarkMode } = props;
   const [editing, setEditing] = useState(false);
   const [todo, setTodo] = useState(text);
   const [hover, setHover] = useState(false);
@@ -83,8 +86,15 @@ const TrelloCard = (props) => {
           </Typography>
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={handleDelete} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
-            <DeleteOutlineOutlinedIcon />
+          <IconButton
+            onClick={handleDelete}
+            style={{
+              transition: 'opacity 0.2s',
+              opacity: hover ? 1 : 0,
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+            }}
+          >
+            <DeleteOutlineOutlinedIcon style={{ color: isDarkMode && '#e9ecef' }} />
           </IconButton>
         </div>
       </div>
@@ -96,9 +106,13 @@ const TrelloCard = (props) => {
         onMouseOver={handleHover}
         onMouseOut={handleHoverLeave}
         style={{
-          backgroundColor: '#efeeee',
-          boxShadow: 'inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5)',
+          backgroundColor: isDarkMode ? '#3a3a3c' : '#efeeee',
+          boxShadow: isDarkMode
+            ? 'inset -6px -6px 16px rgba(40, 40, 40, 0.5), inset 6px 6px 16px rgba(46, 50, 56, 0.5)'
+            : 'inset -6px -6px 16px rgba(255, 255, 255, 0.5), inset 6px 6px 16px rgba(209, 205, 199, 0.5)',
           marginBottom: '20px',
+          // border: isDarkMode && '2px solid #606060',
+          borderRadius: 5,
         }}
       >
         <CardContent style={{ marginBottom: '-20px' }}>
@@ -115,10 +129,26 @@ const TrelloCard = (props) => {
         </CardContent>
 
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={toggleForm} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+          <IconButton
+            onClick={toggleForm}
+            style={{
+              transition: 'opacity 0.2s',
+              opacity: hover ? 1 : 0,
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              color: isDarkMode && '#efeff4',
+            }}
+          >
             <EditOutlinedIcon />
           </IconButton>
-          <IconButton onClick={handleDelete} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+          <IconButton
+            onClick={handleDelete}
+            style={{
+              transition: 'opacity 0.2s',
+              opacity: hover ? 1 : 0,
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              color: isDarkMode && '#efeff4',
+            }}
+          >
             <DeleteOutlineOutlinedIcon />
           </IconButton>
         </div>
@@ -149,14 +179,49 @@ const TrelloCard = (props) => {
           </Typography>
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <IconButton onClick={toggleComplete}>
-            <DoneOutlineOutlinedIcon />
-          </IconButton>
+          {completed ? (
+            <IconButton
+              onClick={toggleComplete}
+              style={{
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+                opacity: 0.4,
+              }}
+            >
+              <CheckCircleIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              onClick={toggleComplete}
+              style={{
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+              }}
+            >
+              <DoneOutlineOutlinedIcon />
+            </IconButton>
+          )}
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <IconButton onClick={toggleForm} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+            <IconButton
+              onClick={toggleForm}
+              style={{
+                transition: 'opacity 0.2s',
+                opacity: hover ? 1 : 0,
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+              }}
+            >
               <EditOutlinedIcon />
             </IconButton>
-            <IconButton onClick={handleDelete} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+            <IconButton
+              onClick={handleDelete}
+              style={{
+                transition: 'opacity 0.2s',
+                opacity: hover ? 1 : 0,
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+              }}
+            >
               <DeleteOutlineOutlinedIcon />
             </IconButton>
           </div>
@@ -188,14 +253,50 @@ const TrelloCard = (props) => {
           </Typography>
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <IconButton onClick={toggleComplete} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
-            <DoneOutlineOutlinedIcon />
-          </IconButton>
+          {completed ? (
+            <IconButton
+              onClick={toggleComplete}
+              style={{
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+                opacity: hover ? 0.4 : 0,
+              }}
+            >
+              <CheckCircleIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              onClick={toggleComplete}
+              style={{
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+                opacity: hover ? 1 : 0,
+              }}
+            >
+              <DoneOutlineOutlinedIcon />
+            </IconButton>
+          )}
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <IconButton onClick={toggleForm} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+            <IconButton
+              onClick={toggleForm}
+              style={{
+                transition: 'opacity 0.2s',
+                opacity: hover ? 1 : 0,
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+              }}
+            >
               <EditOutlinedIcon />
             </IconButton>
-            <IconButton onClick={handleDelete} style={{ transition: 'opacity 0.2s', opacity: hover ? 1 : 0 }}>
+            <IconButton
+              onClick={handleDelete}
+              style={{
+                transition: 'opacity 0.2s',
+                opacity: hover ? 1 : 0,
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                color: isDarkMode && '#efeff4',
+              }}
+            >
               <DeleteOutlineOutlinedIcon />
             </IconButton>
           </div>
@@ -209,7 +310,9 @@ const TrelloCard = (props) => {
 
   const renderForm = () => {
     return (
-      <div style={{ marginBottom: '20px', backgroundColor: isGoal && '#efeeee' }}>
+      <div
+        style={{ marginBottom: '20px', backgroundColor: isDarkMode ? '#5d5d63' : isGoal && '#efeeee', borderRadius: 5 }}
+      >
         <form>
           <TextArea
             autoFocus
@@ -229,15 +332,29 @@ const TrelloCard = (props) => {
               lineHeight: '1.5',
               letterSpacing: '0.00938em',
               marginBottom: '-15px',
-              backgroundColor: isGoal && '#efeeee',
+              borderRadius: 5,
+              color: isDarkMode && '#efeff4',
+              backgroundColor: isDarkMode ? '#5d5d63' : isGoal && '#efeeee',
             }}
           />
         </form>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={handleSubmit} style={{}}>
+          <IconButton
+            onClick={handleSubmit}
+            style={{
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              color: isDarkMode && '#efeff4',
+            }}
+          >
             <SaveOutlinedIcon />
           </IconButton>
-          <IconButton onClick={toggleForm}>
+          <IconButton
+            onClick={toggleForm}
+            style={{
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              color: isDarkMode && '#efeff4',
+            }}
+          >
             <CancelOutlinedIcon />
           </IconButton>
         </div>
@@ -250,13 +367,14 @@ const TrelloCard = (props) => {
     <Draggable draggableId={String(id)} index={index}>
       {(provided, snapshot) => (
         <Container
+          isDarkMode={isDarkMode}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           isDragging={snapshot.isDragging}
           // style={{opacity: completed && '0.4'}}
         >
-          {isTiny ? renderTinyCard() : isGoal ? renderGoalCard() : isTask? renderCard() : renderCustomizedCard()}
+          {isTiny ? renderTinyCard() : isGoal ? renderGoalCard() : isTask ? renderCard() : renderCustomizedCard()}
         </Container>
       )}
     </Draggable>
