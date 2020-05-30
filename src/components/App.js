@@ -70,7 +70,7 @@ const App = (props) => {
                             )
                         )}
                         {provided.placeholder}
-                        {lists.length < 5 && <TrelloActionButton list />}
+                        {lists.length < 5 && <TrelloActionButton list isDarkMode={isDarkMode} />}
                       </ListContainer>
                     )}
                   </Droppable>

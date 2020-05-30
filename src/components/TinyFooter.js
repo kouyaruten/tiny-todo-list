@@ -92,8 +92,8 @@ const styles = {
   linkDarkActive: {
     opacity: 1,
     color: '#efeff4',
-    boxShadow: 'inset -6px -6px 16px rgba(20, 20, 20, 0.5), inset 6px 6px 16px rgba(46, 50, 56, 0.5)',
-    backgroundColor: '#5d5d63',
+    boxShadow: 'inset -6px -6px 16px rgba(40, 40, 40, 0.5), inset 6px 6px 16px rgba(46, 50, 56, 0.5)',
+    backgroundColor: '#3c3c3e',
   },
 };
 export default connect(mapStateToProps)(TinyFooter);
