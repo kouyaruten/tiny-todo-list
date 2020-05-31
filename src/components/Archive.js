@@ -16,8 +16,11 @@ function Archive(props) {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '100%',
+        position: 'absolute',
+        width: '100%',
         backgroundColor: isDarkMode ? '#2c2c2e' : '#eeeeef',
+        overflow: 'auto',
       }}
     >
       <div style={{ padding: '16px 48px', color: '#606060', overflow: 'auto' }}>

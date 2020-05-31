@@ -45,7 +45,7 @@ const App = (props) => {
 
   const Routes = withRouter(({ location }) => (
     <TransitionGroup>
-      <CSSTransition key={location.pathname} classNames="fade" timeout={200}>
+      <CSSTransition key={location.pathname} classNames="fade" timeout={0}>
         <Switch location={location}>
           <Route
             exact

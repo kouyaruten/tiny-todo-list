@@ -91,7 +91,7 @@ const TrelloCard = (props) => {
             style={{
               transition: 'opacity 0.2s',
               opacity: hover ? 1 : 0,
-              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
             }}
           >
             <DeleteOutlineOutlinedIcon style={{ color: isDarkMode && '#e9ecef' }} />
@@ -183,7 +183,7 @@ const TrelloCard = (props) => {
             <IconButton
               onClick={toggleComplete}
               style={{
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
                 opacity: 0.4,
               }}
@@ -194,7 +194,7 @@ const TrelloCard = (props) => {
             <IconButton
               onClick={toggleComplete}
               style={{
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
               }}
             >
@@ -207,7 +207,7 @@ const TrelloCard = (props) => {
               style={{
                 transition: 'opacity 0.2s',
                 opacity: hover ? 1 : 0,
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
               }}
             >
@@ -218,7 +218,7 @@ const TrelloCard = (props) => {
               style={{
                 transition: 'opacity 0.2s',
                 opacity: hover ? 1 : 0,
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
               }}
             >
@@ -257,7 +257,7 @@ const TrelloCard = (props) => {
             <IconButton
               onClick={toggleComplete}
               style={{
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
                 opacity: hover ? 0.4 : 0,
               }}
@@ -268,7 +268,7 @@ const TrelloCard = (props) => {
             <IconButton
               onClick={toggleComplete}
               style={{
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
                 opacity: hover ? 1 : 0,
               }}
@@ -282,7 +282,7 @@ const TrelloCard = (props) => {
               style={{
                 transition: 'opacity 0.2s',
                 opacity: hover ? 1 : 0,
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
               }}
             >
@@ -293,7 +293,7 @@ const TrelloCard = (props) => {
               style={{
                 transition: 'opacity 0.2s',
                 opacity: hover ? 1 : 0,
-                boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+                boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
                 color: isDarkMode && '#efeff4',
               }}
             >
@@ -342,7 +342,7 @@ const TrelloCard = (props) => {
           <IconButton
             onClick={handleSubmit}
             style={{
-              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
               color: isDarkMode && '#efeff4',
             }}
           >
@@ -351,7 +351,7 @@ const TrelloCard = (props) => {
           <IconButton
             onClick={toggleForm}
             style={{
-              boxShadow: isDarkMode && '-6px -6px 16px rgba(40, 40, 40, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
+              boxShadow: isDarkMode && '-6px -6px 16px rgba(60, 60, 60, 0.5), 6px 6px 16px rgba(46, 50, 56, 0.5)',
               color: isDarkMode && '#efeff4',
             }}
           >

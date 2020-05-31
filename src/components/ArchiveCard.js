@@ -39,7 +39,7 @@ function ArchiveCard(props) {
         onMouseOut={handleHoverLeave}
         style={{
           boxShadow: isDarkMode
-            ? 'rgba(20, 20, 20, 0.5) -6px -6px 16px, rgba(46, 50, 56, 0.5) 6px 6px 16px'
+            ? 'rgba(30, 30, 30, 0.5) -6px -6px 16px, rgba(46, 50, 56, 0.5) 6px 6px 16px'
             : 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
           marginBottom: '20px',
           transform: hover && 'translateY(-10px)',

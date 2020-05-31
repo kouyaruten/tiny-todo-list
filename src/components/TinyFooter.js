@@ -75,6 +75,9 @@ const styles = {
     borderRadius: 5,
     marginRight: 5,
     marginLeft: 5,
+    '&:hover': {
+      backgroundColor: '#000000',
+    },
   },
   linkActive: {
     opacity: 1,
