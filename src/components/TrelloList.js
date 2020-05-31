@@ -21,7 +21,7 @@ const ListContainer = styled.div`
 
 const List = styled.div`
   background-color: ${(props) =>
-    props.isDarkMode ? (props.isDraggingOver ? '#8e8e93' : '#3a3a3c') : props.isDraggingOver ? '#dfe3e6' : '#efeeee'};
+    props.isDarkMode ? (props.isDraggingOver ? '#40444e' : '#3a3a3c') : props.isDraggingOver ? '#dfe3e6' : '#efeeee'};
   padding: 16px;
   transition: all 0.1s;
   box-shadow: ${(props) =>
@@ -122,6 +122,10 @@ export const TrelloList = (props) => {
             height: '100%',
             overflow: 'hidden',
             outline: 'none',
+            backgroundColor: isDarkMode && '#5d5d63',
+            boxShadow:
+              isDarkMode && 'inset -6px -6px 16px rgba(60, 60, 60, 0.5), inset 6px 6px 16px rgba(46, 50, 56, 0.5)',
+            color: isDarkMode && '#efeff4',
             border: 'none',
             fontSize: '1.1em',
             fontWeight: '700',
