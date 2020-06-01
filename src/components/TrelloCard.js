@@ -68,8 +68,8 @@ const TrelloCard = (props) => {
   const renderTinyCard = () => {
     return (
       <div
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHoverLeave}
+        onMouseOver={handleHover}
+        onMouseOut={handleHoverLeave}
         onClick={toggleComplete}
         style={{ marginBottom: '20px' }}
       >
