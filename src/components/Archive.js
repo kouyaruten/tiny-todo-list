@@ -48,9 +48,11 @@ function Archive(props) {
         {lists.map(
           (list) =>
             list.id === '3' &&
-            list.cards.map((card) => (
-              <ArchiveCard key={card.id} text={card.text} id={card.id} emoji={card.emoji} isDarkMode={isDarkMode} />
-            ))
+            list.cards
+              .reverse()
+              .map((card) => (
+                <ArchiveCard key={card.id} text={card.text} id={card.id} emoji={card.emoji} isDarkMode={isDarkMode} />
+              ))
         )}
       </div>
       <TinyFooter />
