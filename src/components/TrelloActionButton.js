@@ -52,7 +52,7 @@ class TrelloActionButton extends React.Component {
             placeholder={placeholder}
             type="text"
             autoFocus
-            onBlur={this.closeForm}
+            // onBlur={this.closeForm}
             value={this.state.text}
             onChange={this.handleInputChange}
             style={{
