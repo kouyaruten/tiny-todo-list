@@ -121,7 +121,7 @@ const listReducer = (state = JSON.parse(window.localStorage.getItem('todos')) ||
         if (list.id === action.payload.listId) {
           return {
             ...list,
-            cards: [...list.cards, newCard],
+            cards: [newCard, ...list.cards],
           };
         } else {
           return list;
