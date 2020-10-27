@@ -42,6 +42,7 @@ const TrelloCard = (props) => {
   };
 
   const toggleForm = () => {
+    setTodo(props.text);
     setEditing(!editing);
   };
 
@@ -161,9 +162,9 @@ const TrelloCard = (props) => {
         onMouseOver={handleHover}
         onMouseOut={handleHoverLeave}
         style={{
-          // boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
-          boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
+          boxShadow: 'rgba(0,0,0,0.2) 0 4px 4px',
           marginBottom: '20px',
+          borderRadius: 4,
         }}
       >
         <CardContent style={{ marginBottom: '-20px' }}>
@@ -235,9 +236,9 @@ const TrelloCard = (props) => {
         onMouseOver={handleHover}
         onMouseOut={handleHoverLeave}
         style={{
-          // boxShadow: 'rgba(255, 255, 255, 0.5) -6px -6px 16px, rgba(209, 205, 199, 0.5) 6px 6px 16px',
           boxShadow: 'rgba(0,0,0,0.1) 0 4px 4px',
           marginBottom: '20px',
+          borderRadius: 4,
         }}
       >
         <CardContent style={{ marginBottom: '-20px' }}>
@@ -313,8 +314,8 @@ const TrelloCard = (props) => {
       <div
         style={{ marginBottom: '20px', backgroundColor: isDarkMode ? '#5d5d63' : isGoal && '#efeeee', borderRadius: 5 }}
       >
-        <form>
-          <TextArea
+        <form onSubmit={handleSubmit}>
+          <input
             autoFocus
             onFocus={handleFocus}
             onBlur={handleSubmit}
@@ -335,6 +336,7 @@ const TrelloCard = (props) => {
               borderRadius: 5,
               color: isDarkMode && '#efeff4',
               backgroundColor: isDarkMode ? '#5d5d63' : isGoal && '#efeeee',
+              boxShadow: isDarkMode && 'none',
             }}
           />
         </form>

@@ -11,6 +11,7 @@ import ArchiveCard from './ArchiveCard';
 
 function Archive(props) {
   const { lists, isDarkMode } = props;
+  console.log(lists[3]);
   console.log(isDarkMode);
 
   return (
@@ -49,6 +50,7 @@ function Archive(props) {
           (list) =>
             list.id === '3' &&
             list.cards
+              .slice(0)
               .reverse()
               .map((card) => (
                 <ArchiveCard key={card.id} text={card.text} id={card.id} emoji={card.emoji} isDarkMode={isDarkMode} />
