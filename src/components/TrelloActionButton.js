@@ -41,6 +41,12 @@ class TrelloActionButton extends React.Component {
     this.setState({ text: '' });
   };
 
+  handleListenESC = (e) => {
+    if (e.keyCode === 27) {
+      this.closeForm()
+    }
+  }
+
   renderForm = () => {
     const { list, isDarkMode } = this.props;
     const placeholder = list ? 'Enter list title...' : 'Enter a title for this card...';
@@ -52,9 +58,9 @@ class TrelloActionButton extends React.Component {
             placeholder={placeholder}
             type="text"
             autoFocus
-            // onBlur={this.closeForm}
             value={this.state.text}
             onChange={this.handleInputChange}
+            onKeyDown={this.handleListenESC}
             style={{
               resize: 'none',
               overflow: 'hidden',
@@ -72,6 +78,7 @@ class TrelloActionButton extends React.Component {
               color: '#606060',
               boxShadow: isDarkMode && 'none',
               backgroundColor: isDarkMode && '#3a3a3c',
+              fontSize: '0.9em',
             }}
           >
             Add
@@ -95,7 +102,7 @@ class TrelloActionButton extends React.Component {
             backgroundColor: isDarkMode && '#3a3a3c',
           }}
         >
-          {buttonText}
+          <span style={{ fontSize: '0.875rem', }}>{buttonText}</span>
         </Button>
       </div>
     );

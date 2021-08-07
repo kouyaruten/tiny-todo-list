@@ -81,6 +81,7 @@ const TrelloCard = (props) => {
               opacity: completed && '0.2',
               textDecoration: completed && 'line-through',
               transition: 'all 0.2s',
+              fontSize: '0.9rem',
             }}
           >
             {text}
@@ -123,6 +124,7 @@ const TrelloCard = (props) => {
               opacity: completed && '0.2',
               textDecoration: completed && 'line-through',
               transition: 'all 0.2s',
+              fontSize: '0.9rem',
             }}
           >
             {text}
@@ -174,6 +176,8 @@ const TrelloCard = (props) => {
               opacity: completed && '0.2',
               textDecoration: completed && 'line-through',
               transition: 'all 0.2s',
+              fontSize: '0.9rem',
+
             }}
           >
             {text}
@@ -248,6 +252,8 @@ const TrelloCard = (props) => {
               opacity: completed && '0.2',
               textDecoration: completed && 'line-through',
               transition: 'all 0.2s',
+              fontSize: '0.9rem',
+
             }}
           >
             {text}
@@ -374,7 +380,7 @@ const TrelloCard = (props) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           isDragging={snapshot.isDragging}
-          // style={{opacity: completed && '0.4'}}
+        // style={{opacity: completed && '0.4'}}
         >
           {isTiny ? renderTinyCard() : isGoal ? renderGoalCard() : isTask ? renderCard() : renderCustomizedCard()}
         </Container>
