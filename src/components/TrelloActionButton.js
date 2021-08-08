@@ -26,7 +26,7 @@ class TrelloActionButton extends React.Component {
   handleAddList = () => {
     const { dispatch } = this.props;
     const { text } = this.state;
-    if (text) {
+    if (text && text.trim() !== '') {
       dispatch(addList(text));
     }
     this.setState({ text: '' });
